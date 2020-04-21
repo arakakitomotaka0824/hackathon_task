@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get "login" => "users#login_form"
+  post "login" => "users#login"
+  get "logout" => "users#logout"
+
   get   "users/:id/edit"       => "users#edit"
   post  "users/:id/update"     => "users#update"
   post  "users/create"         => "users#create"
@@ -14,7 +18,7 @@ Rails.application.routes.draw do
   get   "posts/:id"            => "posts#show"
   get   "posts/:id/edit"       => "posts#edit"
   post  "posts/:id/update"     => "posts#update"
-  post  "posts/:id/destroy"    => "posts#destroy"
+  get  "posts/:id/destroy"    => "posts#destroy"
 
   get   "/"                    => "home#top"
   get   "about"                => "home#about"
